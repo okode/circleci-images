@@ -25,7 +25,7 @@ RUN sudo mv /tmp/gradle-$GRADLE_VERSION /opt/gradle
 ENV PATH="/opt/gradle/bin:${PATH}"
 
 # Install GitHub Release Utility
-ENV GOPATH=$HOME/go
+ENV GOPATH=/opt/go
 ENV PATH="$GOPATH/bin:${PATH}"
 RUN sudo apt-get install golang-go
-RUN sudo go get github.com/aktau/github-release
+RUN sudo GOPATH=/opt/go go get github.com/aktau/github-release
