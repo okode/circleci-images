@@ -5,6 +5,7 @@ MAINTAINER Okode <info@okode.com>
 # Install Node
 RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
+RUN sudo npm update -g
 
 # Install Yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
