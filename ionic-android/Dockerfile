@@ -13,9 +13,9 @@ RUN sudo apt-get update && sudo apt-get install yarn
 
 # Install Cordova and Ionic
 RUN sudo yarn global add ionic cordova --non-interactive
-RUN cordova telemetry off
-RUN CI=true ionic config set -g daemon.updates false
-RUN ionic telemetry off
+RUN sudo cordova telemetry off
+RUN sudo CI=true ionic config set -g daemon.updates false
+RUN sudo ionic telemetry off
 
 # Install Gradle
 ARG GRADLE_VERSION=4.1
