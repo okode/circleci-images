@@ -1,4 +1,4 @@
-FROM circleci/openjdk
+FROM circleci/openjdk:8
 
 MAINTAINER Okode <info@okode.com>
 
