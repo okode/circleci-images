@@ -12,7 +12,7 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/so
 RUN sudo apt-get update && sudo apt-get install yarn
 
 # Install Cordova and Ionic
-RUN sudo npm install -g ionic cordova
+RUN sudo npm install -g ionic cordova@7.0.1
 RUN cordova telemetry off
 RUN CI=true ionic config set -g daemon.updates false
 RUN ionic telemetry off
