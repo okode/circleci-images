@@ -2,6 +2,10 @@ FROM circleci/android:api-26-alpha
 
 MAINTAINER Okode <info@okode.com>
 
+# Install additional Android Platforms
+RUN sdkmanager "platforms;android-25"
+RUN sdkmanager --update && yes | sdkmanager --licenses
+
 # Install Node
 RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
