@@ -22,7 +22,7 @@ RUN CI=true ionic config set -g daemon.updates false
 RUN ionic telemetry off
 
 # Install Gradle
-ARG GRADLE_VERSION=4.2.1
+ARG GRADLE_VERSION=4.3
 RUN sudo curl https://downloads.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip > /tmp/gradle-$GRADLE_VERSION-bin.zip
 RUN sudo unzip /tmp/gradle-$GRADLE_VERSION-bin.zip -d /tmp && rm /tmp/gradle-$GRADLE_VERSION-bin.zip
 RUN sudo mv /tmp/gradle-$GRADLE_VERSION /opt/gradle
