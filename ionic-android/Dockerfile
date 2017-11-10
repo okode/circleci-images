@@ -1,4 +1,4 @@
-FROM circleci/android:api-26-alpha
+FROM circleci/android:api-27-alpha
 
 MAINTAINER Okode <info@okode.com>
 
