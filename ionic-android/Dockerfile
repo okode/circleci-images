@@ -15,8 +15,8 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 RUN sudo apt-get update && sudo apt-get install yarn
 
-# Install Cordova, Ionic, Angular CLI
-RUN sudo npm install -g ionic cordova @angular/cli
+# Install Cordova and Ionic
+RUN sudo npm install -g ionic cordova
 RUN cordova telemetry off
 RUN CI=true ionic config set -g daemon.updates false
 RUN ionic telemetry off
