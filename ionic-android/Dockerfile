@@ -1,19 +1,6 @@
-FROM circleci/android:api-27-alpha
+FROM circleci/android:api-27-node8-alpha
 
 MAINTAINER Okode <info@okode.com>
-
-# Install additional Android Platforms
-RUN sdkmanager "platforms;android-25"
-RUN sdkmanager --update && yes | sdkmanager --licenses
-
-# Install Node
-RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-RUN sudo apt-get install -y nodejs
-
-# Install Yarn
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-RUN sudo apt-get update && sudo apt-get install yarn
 
 # Install Cordova and Ionic
 RUN sudo npm install -g ionic cordova
