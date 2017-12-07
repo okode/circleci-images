@@ -16,10 +16,9 @@ RUN sudo mv /tmp/gradle-$GRADLE_VERSION /opt/gradle
 ENV PATH="/opt/gradle/bin:${PATH}"
 
 # Install GitHub Release Utility
-ENV GOPATH=/opt/go
-ENV PATH="$GOPATH/bin:${PATH}"
-RUN sudo apt-get install golang-go
-RUN sudo GOPATH=/opt/go go get github.com/aktau/github-release
+RUN sudo mkdir -p /opt/github-release
+RUN sudo curl -L https://github.com/aktau/github-release/releases/download/v0.7.2/linux-amd64-github-release.tar.bz2 | sudo tar -xjC /opt/github-release
+ENV PATH="/opt/github-release/bin/linux/amd64:${PATH}"
 
 # Install SonarQube Scanner
 ARG SONARQUBE_SCANNER_VERSION=3.0.3.778
