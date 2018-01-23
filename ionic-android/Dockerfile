@@ -6,7 +6,7 @@ MAINTAINER Okode <info@okode.com>
 RUN sudo npm install -g ionic cordova@7.1.0
 RUN cordova telemetry off
 RUN CI=true ionic config set -g daemon.updates false
-RUN ionic telemetry off
+RUN ionic config set -g telemetry false
 
 # Install Gradle
 ARG GRADLE_VERSION=4.4.1
