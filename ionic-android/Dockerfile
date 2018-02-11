@@ -8,6 +8,9 @@ RUN cordova telemetry off
 RUN CI=true ionic config set -g daemon.updates false
 RUN ionic config set -g telemetry false
 
+# Install Fastlane
+RUN gem install fastlane -NV
+
 # Install Gradle
 ARG GRADLE_VERSION=4.5.1
 RUN sudo curl https://downloads.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip > /tmp/gradle-$GRADLE_VERSION-bin.zip
