@@ -1,4 +1,4 @@
-FROM circleci/android:api-28-node8-alpha
+FROM circleci/android:api-27-node8-alpha
 
 MAINTAINER Okode <info@okode.com>
 
