@@ -1,4 +1,4 @@
-FROM openjdk-6-jdk
+FROM java:openjdk-6-jdk
 
 MAINTAINER Okode <info@okode.com>
 
