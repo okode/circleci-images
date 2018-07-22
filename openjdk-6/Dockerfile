@@ -1,6 +1,12 @@
-FROM openjdk:6-jdk
+FROM openjdk-6-jdk
 
 MAINTAINER Okode <info@okode.com>
+
+# Install GitHub Release Utility
+ENV GOPATH=/opt/go
+ENV PATH="$GOPATH/bin:${PATH}"
+RUN sudo apt-get install golang-go
+RUN sudo GOPATH=/opt/go go get github.com/aktau/github-release
 
 # Install SonarQube Scanner
 ARG SONARQUBE_SCANNER_VERSION=3.0.3.778
